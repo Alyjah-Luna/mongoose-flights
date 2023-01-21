@@ -2,19 +2,32 @@
 
 <h2>Enter a New Flight</h2>
 <form action="/flights" method="POST">
-  <label>Airline:
-    <input type="text" name="airline">
+  <label>Airline:</label>
+    <select name="airline">
+    <option value="Choose Airline"></option> 
+    <option value="Alaska">Alaska Airlines</option>
+    <option value="Delta">Delta Air Lines</option>
+    <option value="Frontier">Frontier Airlines</option>
+    <option value="Southwest">Southwest Airlines</option>
+    <option value="Spirit">Spirit Airlines</option>
+    </select><br>
+  <label>Airport:</label>
+    <select name="airport">
+      <option value="Choose Airport"></option>
+      <option value="DFW">Dallas Fort Worth International</option>
+      <option value="JFK">John F. Kennedy International</option>
+      <option value="LAX">Los Angeles International</option>
+      <option value="ORD">O'Hare International</option>
+      <option value="PDX">Portland International</option>
+    </select><br>
+  <label>Flight Number:
+    <input type="number" name="flightNumber">
+    </select>
   </label><br>
-  <label>Airport:
-    <input type="text" name="airport">
+  <label>Date of Departure:
+    <input type="datetime-local" name="dateOfDeparture">
   </label><br>
-  <label>Flight No:
-    <input type="number" name="flightNo">
-</label><br>
-<label>Departs
-    <input type="datetime-local" name="depart">
-</label><br>
-<button type="submit">Add Flight</button>
+  <button type="submit">Add Flight</button>
 </form>
 
 <%- include('../partials/footer') %>

@@ -1,25 +1,27 @@
 <%- include('../partials/header') %>
 
+<nav>
+  <a href="/">Home</a>
+  <a href="/flights/new">New Flight</a>
+</nav>
+
 <h2>Flight List</h2>
 <table>
   <thead>
     <tr>
       <th>Airline</th>
-      <th>Airport</th>
-      <th>Flight No.</th>
-      <th>Departs</th>
+      <th>Flight Number</th>
     </tr>
   </thead>
   <tbody>
-    <% flights.forEach((m) => { %>
+    <% flights.forEach((f) => { %>
       <tr>
-        <td><%= m.airline %></td>
-        <td><%= m.airport %></td>
-        <td><%= m.flightNo %></td>
-        <td><%= m.departs %></td>
+        <td><%= f.airline %></td>
+        <td><%= f.flightNumber %></td>
+        <td><a href="/flights/<%= f._id %>">Details</a></td>
       </tr>
-   <% }) %>
+    <% }) %>
   </tbody>
 </table>
 
-<%- include('../partials/header') %>
+<%- include('../partials/footer') %>
